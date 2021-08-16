@@ -1,0 +1,522 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+html {
+    font-size: 62.5%;  /*1 rem - 10 px*/
+    width: 100vw;
+    height: 100vh;
+
+}
+
+ body {
+    color: #555;
+    background-color: #ecf0f3;
+    font-family: 'Lato', sans-serif;
+}
+
+/* ============================================ MENU STYLES ============================================================================ */
+
+.nav-main{
+    width: 100%;
+    padding: 12px 0;
+    /* background: rgb(227, 227, 250); */
+    background: #ecf0f3;
+    box-shadow: -3px -3px 7px #ffffff, 5px 5px 10px #ceced1;
+}
+
+.menu_container {
+    max-width: 1270px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_brand {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.nav-brand-logo {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    margin: 0 20px 0 0;
+}
+
+.nav_brand a {
+    font-size: 2.0rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #31344b;
+}
+
+/* ================= RIGHT SITE MENU ============================== */
+
+
+.nav-main ul {
+    list-style: none;
+
+}
+
+.nav-main ul li{
+    position: relative;
+    float: left;
+    margin: 2px;
+    height: 40px;
+    width: 150px;
+    color: #31344b;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.8rem;
+    border-radius: 90px;
+    transition: .2s;
+    cursor: pointer;
+    font-weight: 550;
+}
+
+.nav-main ul li a {
+    text-decoration: none;
+    color: #31344b;
+    font-weight: 550;
+
+}
+
+.nav-main ul li:hover{
+    /* box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1; */
+    box-shadow: inset 5px 5px 10px #ff704d, inset -5px -5px 10px #b32400;
+
+
+}
+
+
+.nav-menu a:hover {
+    color: #3498db;
+}
+
+/* ================DROPDOWN MENU ================================ */
+
+.nav-main ul ul{
+    position: absolute;
+    top: 55px;
+    border-radius: 30px;
+    box-shadow: inset 5px 5px 10px #ffffff, inset -5px -5px 10px #ceced1;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: .2s ease-out;
+}
+
+.nav-main ul li:hover > ul{
+    transform: scaleY(1);    
+}
+
+/* ====================================== ADD NEW LINK FORM ================================================= */
+
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ecf0f3;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container-form {
+    width: 430px;
+    height: 530px;
+    padding: 30px 35px 35px 35px;
+    border-radius: 40px;
+    background-color: #ecf0f3;
+    box-shadow: 13px 13px 20px #707172,
+    -8px -8px 10px rgb(161, 158, 158);
+}
+
+
+.logo {
+    background: url("/img/igtLogo1.png") no-repeat center center/cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 2px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaaf, -8px -8px 15px #fff;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 2.8rem;
+    padding-top: 24px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+
+
+.fields {
+    width:100%;
+    padding: 50px 5px 5px 5px;
+    /* font-size: 1.4rem; */
+    
+}
+
+
+.fields input, textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    color: #555;
+    padding: 10px 10px 10px 5px;
+    font-size: 1.4rem;
+    font-family: 'Lato', sans-serif;
+}
+
+#txtTitleLink {
+    text-transform: uppercase;
+
+}
+
+/* .title input {
+    text-transform: uppercase;
+} */
+
+.group-input,
+.group-textarea {
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    transition: background-color 5000s ease-in-out 0s;
+    font-size: 1.4rem;
+    -webkit-text-fill-color: #555 !important; 
+}
+
+.group-input i {
+    margin: 0 10px -3px 25px;
+    font-size: 1.4rem; 
+    
+}
+
+.group-textarea i {
+    margin: 0px 10px -3px 25px;
+    align-self: flex-start;
+    padding-top: 15px;
+    font-size: 1.4rem; 
+}
+
+
+.submitButton {
+    outline: none;
+    border:none;
+    cursor: pointer;
+    width: 100%;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 2.0rem;
+    font-weight: 700;
+    color: rgb(3, 15, 46);
+    text-align: center;
+    background-color: #85b7c7;
+    font-family: 'Lato', sans-serif;
+    box-shadow: inset 5px 5px 20px #b1b1b1, inset -5px -5px 20px #fff;
+    transition: all 0.5s;
+}
+
+.submitButton:hover {
+    background-color: #d9e7eb;
+    box-shadow: inset 5px 5px 20px #5f5e5e, inset -5px -5px 20px #3d3c3c;
+}
+
+.submitButton:active {
+    background-color: #88ef9e;
+}
+
+/* ============= */
+
+
+
+/*======================= VIEW, DELETE AND EDIT LINKS FORM =============================================================== */
+
+.container-list {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3.0rem;
+    background-color: #ecf0f3;
+    padding:40px;
+    justify-items: stretch;
+    margin-top: 15px;
+}
+
+.container-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 280px;
+    padding: 30px 15px 15px 15px;
+    border-radius: 40px;
+    background-color: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1,
+    -13px -13px 20px #fff;
+}
+
+.container-title-a {
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    background-color: rgb(200, 241, 239);
+    text-align: center;
+    font-size: 1.0rem;    
+    font-weight: 700;
+    
+}
+
+.container-title-a:hover {
+    box-shadow: inset -5px -5px 7px #ffffff, inset 3px 3px 5px #ceced1;
+}
+
+.container-title-a:active {
+    box-shadow: inset -5px -5px 7px #ffffff, inset 3px 3px 5px #ceced1;
+}
+
+.container-title-a a {
+    text-decoration: none;
+    color: rgb(4, 12, 78);
+           
+}
+
+.container-title-a a:hover {
+    color: #cf5b0d;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.container-title-a a:active {
+    color: #700517;
+}
+
+
+.description-link textarea {
+
+    text-align:center;
+    font-size: 1.4rem;
+    color:black;
+    /* font-weight: 800; */
+    padding: 5px 10px 5px 5px;
+    resize: none;
+
+}
+
+
+.container-link:hover {
+    box-shadow: inset -2px -2px 2px #ffffff, inset 5px 5px 40px #ceced1;    
+
+}
+
+.container-timeAgo {
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.container-timeAgo h3 {
+    font-weight: 500;
+}
+
+
+.container-buttons {
+    display:flex;
+    align-items:centers;
+    justify-content:space-evenly;
+    
+}
+
+.container-buttonDelete,
+.container-buttonEdit {
+    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
+    padding: 8px 15px 8px 15px;
+    border-radius: 5px;
+    background-color: #ecf0f3;
+    transition: all 0.5s;
+    font-size: 1.6rem;
+}
+
+.container-buttonDelete a {
+    text-decoration: none;
+    color: #db4702;;
+    
+}
+
+.container-buttonEdit a {
+    text-decoration: none;
+    color: #0e0570bd;
+    
+}
+
+.container-buttonDelete:hover {
+    box-shadow: inset -5px -5px 7px #db4702, inset 3px 3px 5px #110400;
+}
+
+.container-buttonDelete a:hover{
+    color: darkred;
+    font-weight: 600;
+}
+
+.container-buttonDelete a:active {
+    color:#555;
+    font-weight: 800;
+}
+
+
+.container-buttonEdit:hover {
+    box-shadow: inset -5px -5px 7px #0e0570bd, inset 3px 3px 5px #110400;
+}
+
+.container-buttonEdit a:hover{
+    color:darkblue;
+    font-weight: 600;
+}
+
+.container-buttonEdit a:active {
+    color:rgb(30, 180, 11);
+    font-weight: 800;
+}
+
+/* =====================LINK NOT SAVED MESSAGE  ========================================================*/
+
+.container-linksNoSaved {
+    grid-column: 3/5;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    padding: 30px 15px 15px 15px;
+    border-radius: 40px;
+    background-color: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1,
+    -13px -13px 20px #fff;
+    text-align: center;
+}
+
+.container-messLinksNoSaved h3{
+    font-size: 2.6rem;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+    margin: 0px;
+}
+
+.container-createOne-a {
+    box-shadow: -3px -3px 7px #ffffff, 10px 10px 20px darkolivegreen;
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: darkolivegreen;
+        
+}
+
+.container-createOne-a:hover {
+    box-shadow: inset -5px -5px 7px #05703ebd, inset 5px 5px 10px #012e0c;
+    background-color: #ceced1;
+}
+
+.container-createOne-a:active {
+    box-shadow: inset -5px -5px 7px #ffffff, inset 3px 3px 5px #ceced1;
+}
+
+
+.container-createOne-a a {
+    text-decoration: none;
+    color: rgb(198, 197, 211);
+    font-size: 2.0rem;
+    letter-spacing: 0.8px;
+}
+
+.container-createOne-a a:hover {
+    color:darkblue;
+    font-weight: 700;
+        
+}
+
+.container-createOne-a a:active {
+    color:rgb(30, 180, 11);
+    font-weight: 800;
+}
+
+
+/* =====================SUCCESSFULLY MESSAGE  ========================================================*/
+
+.container-messageAlert {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px 10px 0px;
+    border-radius: 5px;
+    
+}
+
+.container-messageAlert-box {
+    box-shadow: -3px -3px 7px #ffffff, 5px 5px 10px #ceced1;
+    padding: 8px 30px 8px 30px;
+    border-radius: 10px;
+    background-color: #a2f3c7;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+
+} 
+    
+.container-messageAlert-box h3 {
+    color: #133802bd;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: 0px;
+    
+}
+
+.closeAlert-button {
+    background-color: #a2f3c7;
+    color: #133802bd;
+    font-weight: 700;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    background: url("/img/times-solid.svg") no-repeat center center/cover;
+    width: 14px;
+    height: 16px;
+}
+
+

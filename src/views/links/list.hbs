@@ -1,0 +1,47 @@
+<div class="container-list">
+    {{#each links}}
+        <div class="container-link">
+            <div class="container-title-a">
+                <a href="{{url}}" target="_blank">
+                    <h2 class="title-link">
+                        {{title}}
+                    </h2>
+                </a>
+            </div>
+
+            <div class="description-link">
+                <textarea readonly rows="3" >{{description}}</textarea>
+            </div>
+
+            <div class="container-timeAgo">
+                <h3>{{timeago created_at}}</h3>
+            </div>
+
+            <div class="container-buttons">
+                <div class="container-buttonDelete">
+                    <a href="/links/delete/{{id}}">
+                        Delete
+                    </a>
+                </div>
+                <div class="container-buttonEdit">
+                    <a href="/links/edit/{{id}}">
+                        Edit
+                    </a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <div class="container-linksNoSaved">
+            <div class="container-messLinksNoSaved">
+                <h3>There are not links saved yet.</h3>
+            </div>
+            <div class="container-createOne-a">
+                <a href="/links/add">
+                    Create One!!
+                </a>
+            </div>
+        </div>
+        
+    {{/each}}
+   
+</div>

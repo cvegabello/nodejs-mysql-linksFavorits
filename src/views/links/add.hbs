@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="container-form">
+        <div class="logo"></div>
+        <div class="main-title">Favorites Links</div>
+        <div class="sub-title">{{Action}}</div>
+        <form action="/links/add" method="POST">
+            <div class="fields">
+                <div class="group-input">
+                    <i class="far fa-eye"></i>
+                    <input type="text" id="txtTitleLink" name="title" required minlength="4" maxlength="20" placeholder="Title" autocomplete="on" autofocus>
+                </div>
+                <div class="group-input">
+                    <i class="fas fa-globe"></i>
+                    <input type="url" name="url" placeholder="URL" required>
+                </div>
+                <div class="group-textarea">
+                    <i class="far fa-edit"></i>
+                    <textarea id= "description" minlength="4" maxlength="100" name="description" rows="2" placeholder="Description" required></textarea>
+                </div>                
+            </div>
+            <button type="submit" class="submitButton" id="saveButton">
+                Save
+            </button>
+        </form>
+    </div>
+</div>
+
+
+ 
