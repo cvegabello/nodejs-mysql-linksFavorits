@@ -7,12 +7,14 @@
         
         <ul class="nav-menu">
 
-            <li class="nav-links_dropdown">Links
-                 <ul>
-                    <li><a href="/links">All Links</a></li>
-                    <li><a href="/links/add">Add A Link</a></li>
-                </ul>
-            </li>
+            {{#if user}}
+                <li class="nav-links_dropdown">Links
+                    <ul>
+                        <li><a href="/links">All Links</a></li>
+                        <li><a href="/links/add">Add A Link</a></li>
+                    </ul>
+                </li>
+            {{/if}}
 
             <li>
                 <a href="#">Profile</a>

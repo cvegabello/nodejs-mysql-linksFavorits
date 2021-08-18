@@ -7,6 +7,7 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session');
 const { database } = require('./keys');
 const passport = require('passport');
+const multer = require('multer');
 
 
 
@@ -28,6 +29,11 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 // Middlewares
+app.use(multer({
+  dest: path.join(__dirname, 'public/uploads')
+}).single('image_profile'));
+
+
 app.use(session({
   secret: 'vegamysqlnodemysql',
   resave: false,
@@ -46,9 +52,9 @@ app.use(passport.session());
 
 // Global Variables
 app.use((req, res, next) => {
-    // app.locals.message = req.flash('message');
+    app.locals.message = req.flash('message');
     app.locals.success = req.flash('success');
-    // app.locals.user = req.user;
+    app.locals.user = req.user;
     next();
   });
 

@@ -6,3 +6,12 @@
         </div>
     </div>
 {{/if}}
+
+{{#if message}}
+    <div class="container-messageAlert">
+        <div class="container-messageAlert-box">
+            <h3>{{ message }}</h3>
+            <input type = "button" class="closeAlert-button" onclick="location.reload()"/>
+        </div>
+    </div>
+{{/if}}

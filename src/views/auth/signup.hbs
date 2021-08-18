@@ -1,8 +1,15 @@
 <div class="container">
     <div class="container-form">
-        <div class="logo"></div>
         <div class="main-title">SignUp</div>
-        <div class="sub-title">###</div>
+        <form action="" method="POST" enctype="multipart/form-data"></form>
+            <div class="profile-pic-div">
+                <img src="/img/businessman1.png" id= 'photo'>
+                <input type="file" name="image_profile" id='pic_file'>
+                <label for="pic_file" id='uploadBtn'>Choose Photo</label>
+            </div>
+        </form>
+           
+        
         <form action="/signup" method="POST">
             <div class="fields">
                 <div class="group-input">
@@ -17,6 +24,8 @@
                     <i class="fas fa-globe"></i>
                     <input type="password" name="password" placeholder="Password" minlength="2" maxlength="8" required>
                 </div>
+                
+
             </div>
             <button type="submit" class="submitButton" id="saveButton">
                 SignUp
