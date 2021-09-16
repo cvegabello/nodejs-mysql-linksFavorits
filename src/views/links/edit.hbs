@@ -1,8 +1,6 @@
 <div class="container">
-    <div class="container-form">
-        <div class="logo"></div>
-        <div class="main-title">Favorites Links</div>
-        <div class="sub-title">{{Action}}</div>
+    <div class="container-form__link">
+        <div class="main-title__link">{{Action}}</div>
         <form action="/links/edit/{{link.id}}" method="POST" id= "formLink">
             <div class="fields">
                 <div class="group-input">
@@ -11,7 +9,7 @@
                 </div>
                 <div class="group-input">
                     <i class="fas fa-globe"></i>
-                    <input type="url" name="url" value = "{{link.url}}" required> 
+                    <input type="text" name="url" value = "{{link.url}}" required> 
                 </div>
                 <div class="group-textarea">
                     <i class="far fa-edit"></i>
@@ -24,3 +22,9 @@
         </form>
     </div>
 </div>
+{{!-- <script>
+    const _container = document.querySelector(".container");
+    _container.addEventListener("click", function () {
+        alert("hola");
+    });
+</script> --}}

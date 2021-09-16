@@ -7,6 +7,7 @@
                         {{title}}
                     </h2>
                 </a>
+                
             </div>
 
             <div class="description-link">
@@ -19,7 +20,7 @@
 
             <div class="container-buttons">
                 <div class="container-buttonDelete">
-                    <a href="/links/delete/{{id}}">
+                    <a onclick ="alertSwalDeleteLink({{id}})" id = "link-delete-link" href="#" >
                         Delete
                     </a>
                 </div>
@@ -45,3 +46,4 @@
     {{/each}}
    
 </div>
+

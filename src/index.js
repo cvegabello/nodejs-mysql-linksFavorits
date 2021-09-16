@@ -10,11 +10,18 @@ const passport = require('passport');
 const multer = require('multer');
 
 
+// const storage = multer.diskStorage({
+//   destination: path.join(__dirname, 'public/uploads'),
+//   filename: (req,file,cb) => {
+//     cb(null, file.originalname);
+//   }
+// })
 
 // Initializations
 
 const app = express();
 require('./lib/passport');
+
 
 // settings
 app.set('port', process.env.PORT || 4000);
@@ -29,9 +36,21 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 // Middlewares
-app.use(multer({
-  dest: path.join(__dirname, 'public/uploads')
-}).single('image_profile'));
+
+// app.use(multer({
+//   storage,
+//   dest: path.join(__dirname, 'public/uploads'),
+//   limits: {fileSize: 1000000},
+//   fileFilter: (req, file, cb) => {
+//       const filetypes = /jpeg|jpg|png|gif/;
+//       const mimetype = filetypes.test(file.mimetype);
+//       const extname = filetypes.test(path.extname(file.originalname));
+//       if (mimetype && extname){
+//           return cb(null, true);
+//       }
+//       cb("Error: File type is not valid. Try to upload jpeg, jpg, png, gif");
+//   }
+//   }).single('image_profile'));
 
 
 app.use(session({
@@ -46,6 +65,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
+// app.use(Swal());
 
 
 
@@ -55,6 +75,7 @@ app.use((req, res, next) => {
     app.locals.message = req.flash('message');
     app.locals.success = req.flash('success');
     app.locals.user = req.user;
+    // app.locals.txtPhoto = req.txtPhoto;
     next();
   });
 
@@ -62,6 +83,7 @@ app.use((req, res, next) => {
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
 app.use('/links', require('./routes/links'));
+// app.use('/forgot', require('./routes/forgot'));
 
 // Public
 app.use(express.static(path.join(__dirname, 'public')));

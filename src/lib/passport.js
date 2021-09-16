@@ -3,6 +3,8 @@ const LocalStrategy = require('passport-local').Strategy;
 
 const pool = require('../database');
 const helpers = require('./helpers');
+// const multer = require('multer');
+
 
 
 passport.use('local.signin', new LocalStrategy({
@@ -16,7 +18,8 @@ passport.use('local.signin', new LocalStrategy({
     const validPassword = await helpers.matchPassword(password,user.password);
     if (validPassword) {
       done(null, user, req.flash('success', 'Welcome ' + user.username));
-    } 
+      
+    }
     else {
       done(null, false, req.flash('message', 'Login failed'));
     }
@@ -32,17 +35,44 @@ passport.use('local.signup', new LocalStrategy({
   passwordField: 'password',
   passReqToCallback: true
 }, async (req, username, password, done) => {
-  const { fullname } = req.body;
-  let newUser = {
-    fullname,
-    username,
-    password
-  };
-  newUser.password = await helpers.encryptPassword(password);
-  // Saving in the Database
-  const result = await pool.query('INSERT INTO users SET ? ', newUser);
-  newUser.id = result.insertId;
-  return done(null, newUser);
+  // console.log(req.file);
+  const rows = await pool.query('SELECT * FROM users WHERE username = ? ', [username]);
+  if (rows.length >0) {
+    done(null, false, req.flash('message', `Username ${username} already exists. Please try another. `));
+  }
+  else {
+    const { fullname, txtPhotoHide, email } = req.body;
+    
+    const rows = await pool.query('SELECT * FROM users WHERE email = ? ', [email]);
+    if (rows.length >0) {
+      done(null, false, req.flash('message', `Email ${email} already exists. Please try another. `));
+    }
+    else {
+      let profile_image = '';
+      try {
+        profile_image = req.file.filename;
+      }
+      catch(err) {
+        console.log(profile_image + '=====' + err);
+        profile_image = txtPhotoHide;
+      }
+      finally {
+        let newUser = {
+          profile_image,
+          fullname,
+          username,
+          password,
+          email
+        };
+        newUser.password = await helpers.encryptPassword(password);
+        // Saving in the Database
+        const result = await pool.query('INSERT INTO users SET ? ', newUser);
+        newUser.id = result.insertId;
+        return done(null, newUser);
+      }
+    }
+
+  }
 }));
 
 passport.serializeUser((user, done) => {

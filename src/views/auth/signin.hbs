@@ -1,22 +1,134 @@
-<div class="container">
-    <div class="container-form">
-        <div class="logo"></div>
-        <div class="main-title">SignIn</div>
-        <div class="sub-title">###</div>
-        <form action="/signin" method="POST">
-            <div class="fields">
-                <div class="group-input">
-                    <i class="fas fa-globe"></i>
-                    <input type="text" name="username" placeholder="Username" required>
+{{!-- <script src="https://unpkg.com/vue-swal"></script> --}}
+<script src="/scripts/sweetAlert.js"></script>
+{{#if username.username}}
+    
+    <script type="text/javascript"> 
+        alertSwalUsername(`{{username.username}}`); 
+    </script> 
+    {{!-- <div class="containerMessages"></div> --}}
+    <div class="container">
+        <div class="container-form__signin">
+            <div class="main-title">Sign in</div>
+            <form action="/signin" method="POST">
+                <div class="profile-pic-div">
+                    <img src="/img/businessman1.png" id= 'photo'>
                 </div>
-                <div class="group-input">
-                    <i class="fas fa-globe"></i>
-                    <input type="password" name="password" placeholder="Password" minlength="2" maxlength="8" required>
+                <div class="fields">
+                    <div class="group-input">
+                        <i class="fas fa-user-tie"></i>
+                        <input type="text" name="username" placeholder="Username" value = {{username.username}} required>
+                    </div>
+                    <div class="group-input">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" placeholder="Password" minlength="2" maxlength="12" required>
+                    </div>
                 </div>
-            </div>
-            <button type="submit" class="submitButton" id="saveButton">
-                SignIn
-            </button>
-        </form>
+                <button type="submit" class="submitButton" id="saveButton">
+                    Sign in
+                </button>
+
+                <div class="container-link-forgot">
+                    <a onclick = "alertSwalForgotUsername()" href="#">
+                        Forgot Username?
+                    </a>
+                    {{!-- <a href="/forgot_user" id = 'link-forgot-username'>
+                        Forgot Username?
+                    </a> --}}
+                    <a onclick = "alertSwalForgotPassword()" href="#">
+                        Forgot Password?
+                    </a>
+
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+{{else}}
+    {{#if messageSwal}}
+        <script type="text/javascript"> 
+            alertSwalMessage(`{{messageSwal}}`, false); 
+        </script> 
+        {{!-- <div class="containerMessages"></div> --}}
+        <div class="container">
+            <div class="container-form__signin">
+                <div class="main-title">Sign in</div>
+                <form action="/signin" method="POST">
+                    <div class="profile-pic-div">
+                        <img src="/img/businessman1.png" id= 'photo'>
+                    </div>
+                    <div class="fields">
+                        <div class="group-input">
+                            <i class="fas fa-user-tie"></i>
+                            <input type="text" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="group-input">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password" placeholder="Password" minlength="2" maxlength="12" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="submitButton" id="saveButton">
+                        Sign in
+                    </button>
+
+                    <div class="container-link-forgot">
+                        <a onclick = "alertSwalForgotUsername()" href="#">
+                            Forgot Username?
+                        </a>
+                        {{!-- <a href="/forgot_user" id = 'link-forgot-username'>
+                            Forgot Username?
+                        </a> --}}
+                        <a onclick = "alertSwalForgotPassword()" href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    {{else}}
+
+        <div class="container">
+            <div class="container-form__signin animate__animated animate__backInDown">
+                <div class="main-title">Sign in</div>
+                <form action="/signin" method="POST">
+                    <div class="profile-pic-div">
+                        <img src="/img/businessman1.png" id= 'photo'>
+                    </div>
+                    <div class="fields">
+                        <div class="group-input">
+                            <i class="fas fa-user-tie"></i>
+                            <input type="text" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="group-input">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password" placeholder="Password" minlength="2" maxlength="12" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="submitButton" id="saveButton">
+                        Sign in
+                    </button>
+
+                    <div class="container-link-forgot">
+                        <a onclick = "alertSwalForgotUsername()" href="#">
+                            Forgot Username?
+                        </a>
+                        {{!-- <a href="/forgot_user" id = 'link-forgot-username'>
+                            Forgot Username?
+                        </a> --}}
+                        <a onclick = "alertSwalForgotPassword()" href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    {{/if}}
+{{/if}}
+
+
+
+
+
+
+
+{{!-- <script src="/scripts/sweetAlertForgot.js"></script> --}}

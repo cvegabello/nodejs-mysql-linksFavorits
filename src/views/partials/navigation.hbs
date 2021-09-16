@@ -1,38 +1,110 @@
 <nav class="nav-main">
     <div class="menu_container">
-        <div class="nav_brand">
-            <img src="/img/igtLogo1.png" alt="Logo Menu" class="nav-brand-logo">
-            <a href="/links">Favorites Links</a>
-        </div>
+        {{#if user}}
+            <div class="nav_brand">
+                <img src="/img/igtLogo1.png" alt="Logo Menu" class="nav-brand-logo">
+                <a href="/links">Favorites Links</a>
+            </div>
+        {{else}}
+            <div class="nav_brand">
+                <img src="/img/igtLogo1.png" alt="Logo Menu" class="nav-brand-logo">
+                <a href="/">Favorites Links</a>
+            </div>
+        {{/if}}
         
-        <ul class="nav-menu">
-
+        <ul class="nav-menu" id="nav_menu">
             {{#if user}}
                 <li class="nav-links_dropdown">Links
-                    <ul>
+                    <div class="dd_menu_links">
+                        <div class="dd_left">
+                            <ul>
+                                <li><i class="far fa-id-card"></i></li>
+                                <li><i class="fas fa-sign-out-alt"></i></li>
+                            </ul>
+                        </div>
+                        <div class="dd_right">
+                            <ul>
+                                <li><a href="/links">All Links</a></li>
+                                <li><a href="/links/add">Add A Link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    {{!-- <ul>
                         <li><a href="/links">All Links</a></li>
                         <li><a href="/links/add">Add A Link</a></li>
-                    </ul>
+                    </ul> --}}
                 </li>
+           
+                <li>
+                    <div class="li_main_group">
+                        <img class="li_main" src= "/uploads/{{user.profile_image}}" alt="profile_image"/>
+                        <h5>{{user.fullname}}</h5>
+                        <i class="fas fa-chevron-down" id = "icon_arrow"></i>
+
+                    </div>
+                    
+                    <div class="dd_menu">
+                        <div class="dd_left">
+                            <ul>
+                                <li><i class="far fa-id-card"></i></li>
+                                <li><i class="fas fa-sign-out-alt"></i></li>
+                            </ul>
+                        </div>
+                        <div class="dd_right">
+                            <ul>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+            {{else}}
+                <li>
+                    <a href="/signin">Sign in</a>
+                </li>
+                <li>
+                    <a href="/signup">Sign up</a>
+                </li>
+
             {{/if}}
 
-            <li>
-                <a href="#">Profile</a>
-            </li>
-            <li>
-                <a href="#">Logout</a>
-            </li>
-
         </ul>
-
-        {{!-- <ul class="nav-menu-right">
-            <li>
-                <a href="#">
-                    <i class="fas fa-search"></i>
-                </a>
-            </li>
-
-        </ul> --}}
-
     </div>
 </nav>
+
+<script>
+    const _dd_menu = document.querySelector(".dd_menu");
+    const _dd_menu_links = document.querySelector(".dd_menu_links");
+    const _li_main_group = document.querySelector(".li_main_group");
+    const _nav_links_dropdown = document.querySelector(".nav-links_dropdown");
+    const _icon_arrow = document.getElementById("icon_arrow");
+
+    _dd_menu_links.style.display = "none";
+    _dd_menu.style.display = "none";
+    _li_main_group.addEventListener("click", function () {
+        if (_dd_menu.style.display == "none"){
+            _dd_menu.style.display = "flex";
+            _icon_arrow.classList = 'fas fa-chevron-up'
+        }else {
+            _dd_menu.style.display = "none";
+            _icon_arrow.classList = 'fas fa-chevron-down'
+        };
+        if (_dd_menu_links.style.display == "flex"){
+            _dd_menu_links.style.display = "none";
+        };
+    });
+
+    _nav_links_dropdown.addEventListener("click", function () {
+        if (_dd_menu_links.style.display == "none"){
+            _dd_menu_links.style.display = "flex";
+        }else {
+            _dd_menu_links.style.display = "none";
+        };
+        if (_dd_menu.style.display == "flex"){
+            _dd_menu.style.display = "none";
+            _icon_arrow.classList = 'fas fa-chevron-down'
+        };
+    });
+</script>

@@ -1,35 +1,88 @@
+{{!-- <script src="../../public/scripts/signupScript.js"></script> --}}
 <div class="container">
-    <div class="container-form">
-        <div class="main-title">SignUp</div>
-        <form action="" method="POST" enctype="multipart/form-data"></form>
-            <div class="profile-pic-div">
-                <img src="/img/businessman1.png" id= 'photo'>
-                <input type="file" name="image_profile" id='pic_file'>
-                <label for="pic_file" id='uploadBtn'>Choose Photo</label>
-            </div>
-        </form>
-           
+  <div class="container-form__signup">
+    <div class="main-title">New account</div>
+    <form action="/signup" method="POST" enctype="multipart/form-data" id="formSignUp">
+      <div class="profile-pic-div">
+        <img src="/img/businessman1.png" id="photo" />
+        <input type="file" id="pic_file" name="txtPhoto" value="businessman1.png"/>
+        <label for="pic_file" id="changePhotoBtn">Upload Photo</label>
+      </div>
+      <input type="text" name="txtPhotoHide" id="IdTxtPhotoHide" value="businessman1.png"/>
+      <div class="fields">
+        <div class="group-input" id="groupSignup__fullname">
+          <i class="fas fa-user-plus"></i>
+          <input
+            type="text"
+            name="fullname"
+            required
+            minlength="2"
+            maxlength="20"
+            placeholder="First Name"
+            autocomplete="on"
+            onkeyup = "validateFormSignup(event)"
+            autofocus
+          />
+          <i id = "icon-validate-state__fullname" class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p id="inputMessError__fullname" class= "form__input-error">First name can only use letters without spaces. Size between 2-20.</p>
+        <div class="group-input" id="groupSignup__email">
+          <i class="fas fa-at"></i>
+          <input type="email" name="email" placeholder="Email" onkeyup = "validateFormSignup(event)" required />
+          <i id = "icon-validate-state__email" class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p id="inputMessError__email" class= "form__input-error">Email must be entered correctly.</p>
         
-        <form action="/signup" method="POST">
-            <div class="fields">
-                <div class="group-input">
-                    <i class="far fa-eye"></i>
-                    <input type="text" name="fullname" required minlength="4" maxlength="20" placeholder="Full Name" autocomplete="on" autofocus>
-                </div>
-                <div class="group-input">
-                    <i class="fas fa-globe"></i>
-                    <input type="text" name="username" placeholder="Username" required>
-                </div>
-                <div class="group-input">
-                    <i class="fas fa-globe"></i>
-                    <input type="password" name="password" placeholder="Password" minlength="2" maxlength="8" required>
-                </div>
-                
+        <div class="group-input" id="groupSignup__username">
+          <i class="fas fa-user-tie"></i>
+          <input type="text" name="username" placeholder="Username" onkeyup = "validateFormSignup(event)" required />
+          <i id = "icon-validate-state__username" class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p id="inputMessError__username" class= "form__input-error">Username can only use letters, numbers and underscore. Size between 4-16.</p>
+        
+        <div class="group-input" id="groupSignup__password">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            name="password"
+            id="inputPassword1"
+            placeholder="Password"
+            minlength="4"
+            maxlength="12"
+            onkeyup = "validateFormSignup(event)"
+            required
+          />
+          <i id = "icon-validate-state__password" class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p id="inputMessError__password" class= "form__input-error">Password must be between 4 and 12 characters.</p>
+        
+        <div class="group-input" id="groupSignup__password2">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            name="password2"
+            id="inputPassword2"
+            placeholder="Confirm Password"
+            minlength="4"
+            maxlength="12"
+            onkeyup = "validateFormSignup(event)"
+            required
+          />
+          <i id = "icon-validate-state__password2" class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p id="inputMessError__password2" class= "form__input-error">Passwords does not match.</p>
 
-            </div>
-            <button type="submit" class="submitButton" id="saveButton">
-                SignUp
-            </button>
-        </form>
-    </div>
+      </div>
+      {{!-- <div class="formulario__mensaje" id="signupId__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please fill out this form correctly. </p>
+			</div>   --}}
+      <button type="button" class="submitButton" id="saveButton" onclick = "validaSignUpSubmit(formSignUp)">
+        SignUp
+      </button>
+      <div class="formulario__mensaje" id="signupId__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please fill out this form correctly. </p>
+			</div>  
+    </form>
+  </div>
 </div>
+{{!-- <script src="../../public/scripts/signupScript.js"></script> --}}

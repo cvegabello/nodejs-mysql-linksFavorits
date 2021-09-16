@@ -1,17 +1,50 @@
-const imgDiv = document.querySelector('.profile-pic-div');
-const img = document.querySelector('#photo');
-const file = document.querySelector('#file');
-const uploadBtn = document.querySelector('#uploadBtn');
+const current_location = location.pathname;
+const _nav_menu = document.getElementById("nav_menu");
+const imgDiv = document.querySelector(".profile-pic-div");
+const img = document.getElementById("photo");
+const file = document.querySelector("#pic_file");
+const _changePhotoBtn = document.querySelector("#changePhotoBtn");
+const _IdTxtPhotoHide = document.getElementById("IdTxtPhotoHide");
 
-imgDiv.addEventListener('mouseenter', function()
-{
-    uploadBtn.style.display = 'block'
+
+if (current_location == "/") {
+  _nav_menu.style.visibility = "hidden";
+}
+
+file.addEventListener("change", function () {
+  const choosedFile = this.files[0];
+  if (choosedFile) {
+    const reader = new FileReader();
+    reader.addEventListener("load", function () {
+      img.setAttribute("src", reader.result);
+      _IdTxtPhotoHide.setAttribute("value", file.files[0].name);
+    });
+    reader.readAsDataURL(choosedFile);
+    _changePhotoBtn.style.display = "none";
+
+    imgDiv.addEventListener("mouseenter", function () {
+      _changePhotoBtn.style.display = "block";
+    });
+    
+    imgDiv.addEventListener("mouseleave", function () {
+      _changePhotoBtn.style.display = "none";
+    });
+  }
 });
 
-imgDiv.addEventListener('mouseleave', function()
-{
-    uploadBtn.style.display = 'none'
+_changePhotoBtn.addEventListener("click", function () {
+  _changePhotoBtn.style.display = "none";
 });
+
+
+
+
+
+
+
+
+
+
 
 
 // _btnSave.addEventListener("click", forceInputUppercase);
@@ -19,9 +52,6 @@ imgDiv.addEventListener('mouseleave', function()
 // document.addEventListener("DOMContentLoaded", function() {
 //     document.getElementById("formLink").addEventListener("submit", forceInputUppercase);
 // })
-
-
-
 
 // function forceInputUppercase(event)
 // {
@@ -33,8 +63,6 @@ imgDiv.addEventListener('mouseleave', function()
 //     objetivo.innerHTML =  _txtTitleLink;
 //     this.submit();
 //     // return 0;
-    
-    
-//     // alert("Hola Mundo!!!! Bacan")
-// }
 
+//     // alert("Hola Mundo!!!! Bacan")
+// 
