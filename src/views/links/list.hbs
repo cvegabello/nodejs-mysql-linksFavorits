@@ -1,36 +1,44 @@
 <div class="container-list">
     {{#each links}}
-        <div class="container-link">
-            <div class="container-title-a">
-                <a href="{{url}}" target="_blank">
-                    <h2 class="title-link">
-                        {{title}}
-                    </h2>
-                </a>
+        {{!-- <div class="container-link-hidden"> --}}
+            
+            <a href="{{url}}" target="_blank" class="container-link-hidden">
+                <i class="fas fa-ellipsis-v icon-more-vertical" title="more actions"></i>
+                <img src="https://cdn.robinhood.com/assets/generated_assets/167EWkdKrN2X6Jqp7LEO9o.ico" alt="">
+                <p>{{title}}</p>
+            </a>
+                    
+            
+            {{!-- <div class="container-link"> --}}
                 
-            </div>
 
-            <div class="description-link">
-                <textarea readonly rows="3" >{{description}}</textarea>
-            </div>
 
-            <div class="container-timeAgo">
-                <h3>{{timeago created_at}}</h3>
-            </div>
 
-            <div class="container-buttons">
-                <div class="container-buttonDelete">
-                    <a onclick ="alertSwalDeleteLink({{id}})" id = "link-delete-link" href="#" >
-                        Delete
-                    </a>
+                
+                {{!-- <div class="description-link">
+                    <textarea readonly rows="3" >{{description}}</textarea>
                 </div>
-                <div class="container-buttonEdit">
-                    <a href="/links/edit/{{id}}">
-                        Edit
-                    </a>
+
+                <div class="container-timeAgo">
+                    <h3>{{timeago created_at}}</h3>
                 </div>
-            </div>
-        </div>
+
+                <div class="container-buttons">
+                    <div class="container-buttonDelete">
+                        <a onclick ="alertSwalDeleteLink({{id}})" id = "link-delete-link" href="#" >
+                            Delete
+                        </a>
+                    </div>
+                    <div class="container-buttonEdit">
+                        <a href="/links/edit/{{id}}">
+                            Edit
+                        </a>
+                    </div>
+                </div> --}}
+            {{!-- </div> --}}
+            {{!-- <p>{{title}}</p> --}}
+        {{!-- </div> --}}
+        
     {{else}}
         <div class="container-linksNoSaved">
             <div class="container-message">
