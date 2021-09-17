@@ -107,7 +107,6 @@ html {
 }
 
 .nav-menu a:hover{
-    /* box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1; */
     padding: 5px 15px 5px 15px;
     border-radius: 30px;
     box-shadow: inset 5px 5px 10px #ff704d, inset -5px -5px 10px #b32400;
@@ -180,7 +179,6 @@ html {
 .dd_left i{
     font-size: 1.6rem;
 }
-
 
 
 .dd_left li{
@@ -677,26 +675,53 @@ input:-webkit-autofill:active  {
 
 .more-actions-menu{
     position: absolute;
-    top: 150px;
-    left:150px;
     display: none;
     z-index: 10;
     list-style: none;
-    /* width: 90px; */
     /* display:flex; */
     border-radius: 5px;
     /* border: 2px solid black; */
     height: 100px;
-    width: 120px;
-    color: #31344b;
+    width: 140px;
     line-height: 30px;
     text-align: center;
     font-size: 1.4rem;
     font-weight: 550;
-    background: gray;
-    
+    background: rgb(233, 227, 227);
+    padding: 8px 15px;
+     
+}
+
+.more-actions-menu a{
+    text-decoration: none;
+    color: #868686;
+} 
+
+.more-actions-menu a:hover{
+    padding: 5px 10px 5px 10px;
+    border-radius: 8%;
+    box-shadow: inset 5px 5px 10px #e7ddda, inset -5px -5px 10px #c77f6d;
+}
+
+
+/* .nav-links_dropdown{
+    padding:0px 30px 0px 30px;
+    cursor: pointer; 
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 10px #858282, inset -5px -5px 10px #ceced1;
 
 }
+
+.nav-links_dropdown:hover{
+    box-shadow: inset 5px 5px 10px #ff704d, inset -5px -5px 10px #b32400;
+
+} */
+
+
+
+
+
+
 
 .icon-more-vertical:hover {
     display:block;

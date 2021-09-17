@@ -1,22 +1,17 @@
 {{#if links}}
     <div class="container-list">
     {{#each links}}
-    
+        
         <ul class="more-actions-menu">
             <li><a href="#">Edit shortcut</a></li>
-            <li>Remove</li>
-            <li>Info Link</li>
+            <li><a href="#">Remove</a></li>
+            <li><a href="#">Info Link</a></li>
         </ul>
+        
         <div class="container-link">
             <i class="fas fa-ellipsis-v icon-more-vertical" title="More actions"></i>
-            {{!-- <ul class="more-actions-menu">
-                <li><a href="#">Edit shortcut</a></li>
-                <li>Remove</li>
-                <li>Info Link</li>
-            </ul> --}}
             <a href="{{url}}" target="_blank" class="container-link-hidden" title="{{url}}">
                 <img src=https://www.google.com/s2/favicons?domain_url={{url}}  alt="">
-                {{!-- <img src="https://cdn.robinhood.com/assets/generated_assets/167EWkdKrN2X6Jqp7LEO9o.ico" alt=""> --}}
                 <p>{{title}}</p>
             </a>
         </div>
@@ -45,7 +40,7 @@
                 if (_more_actions_menu.style.display == "none") {
                 _more_actions_menu.style.display ="block";
                 _more_actions_menu.style.top=coords.top + 5 + "px";
-                _more_actions_menu.style.left=coords.left - 95 + "px";
+                _more_actions_menu.style.left=coords.left - 120 + "px";
                 _more_actions_menu.focus();
 
                 } else {
@@ -113,40 +108,6 @@
     </div>
 {{/if}}
 
-{{!-- <script>
-    const _container_list = document.querySelector(".container-list");
-    const _more_actions_menu = document.querySelector(".more-actions-menu");
-    const _moreActionBtnList = document.querySelectorAll(".icon-more-vertical");
-    const _containerLinkList = document.querySelectorAll(".container-link");
-    _more_actions_menu.style.display ="none";
-    _container_list.addEventListener("click", function () {
-        if (_more_actions_menu.style.display == "block") {
-          _more_actions_menu.style.display ="none";
-        }
-    });
 
-    for (let i = 0; i < _containerLinkList.length; i++)
-    {
-        _moreActionBtnList[i].addEventListener("click", function () {
-            let coords = _moreActionBtnList[i].getBoundingClientRect();
-            // alert(coords.left)
-            if (_more_actions_menu.style.display == "none") {
-            _more_actions_menu.style.display ="block";
-            _more_actions_menu.style.top=coords.top + 5 + "px";
-            _more_actions_menu.style.left=coords.left - 95 + "px";
-            _more_actions_menu.focus();
 
-            } else {
-            _more_actions_menu.style.display ="none";
-            }
-        })
-        _containerLinkList[i].addEventListener("mouseover", function () {
-        _moreActionBtnList[i].style.display = "block";
-        });
-        
-        _containerLinkList[i].addEventListener("mouseleave", function () {
-        _moreActionBtnList[i].style.display = "none";
-        });
-  }
-</script>  --}}
 
