@@ -19,10 +19,10 @@ function validateFormSignup(e) {
         validarField(expresions.nombre, e.target, 'fullname');
       break;
           case "username":
-            validarField(expresiones.usuario, e.target, 'username');
+            validarField(expresions.usuario, e.target, 'username');
           break;
           case "password":
-            validarField(expresiones.password, e.target, 'password');
+            validarField(expresions.password, e.target, 'password');
             validarSignupPassword2();
           break;
           case "password2":
@@ -30,7 +30,7 @@ function validateFormSignup(e) {
           break;
           case "email":
               
-            validarField(expresiones.email, e.target, 'email');
+            validarField(expresions.email, e.target, 'email');
   
           break;
       }

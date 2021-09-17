@@ -7,9 +7,12 @@ const _changePhotoBtn = document.querySelector("#changePhotoBtn");
 const _IdTxtPhotoHide = document.getElementById("IdTxtPhotoHide");
 
 
+// _more_actions_menu.style.display ="none";
+
 if (current_location == "/") {
   _nav_menu.style.visibility = "hidden";
 }
+
 
 file.addEventListener("change", function () {
   const choosedFile = this.files[0];
@@ -36,21 +39,6 @@ _changePhotoBtn.addEventListener("click", function () {
   _changePhotoBtn.style.display = "none";
 });
 
-
-// var getFavicon = function(){
-//   var favicon = undefined;
-//   var nodeList = document.getElementsByTagName("link");
-//   for (var i = 0; i < nodeList.length; i++)
-//   {
-//       if((nodeList[i].getAttribute("rel") == "icon")||(nodeList[i].getAttribute("rel") == "shortcut icon"))
-//       {
-//           favicon = nodeList[i].getAttribute("href");
-//       }
-//   }
-//   return favicon;        
-// }
-
-// alert(getFavicon());​
 
 
 

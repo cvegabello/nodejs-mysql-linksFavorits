@@ -23,9 +23,8 @@
 
     {{!-- STYLES --}}
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-    {{!-- <link rel="stylesheet" href="/css/stylesListLink.css"> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
 </head>
 <body>
     {{>navigation}}
@@ -34,34 +33,9 @@
 
     {{{ body }}}
 
-    <script>
-        const _container_list = document.querySelector(".container-list");
-        _container_list.addEventListener("click", function () {
-            if (_dd_menu_links.style.display == "flex"){
-                _dd_menu_links.style.display = "none";
-            } 
-            if (_dd_menu.style.display == "flex"){
-                _dd_menu.style.display = "none";
-                _icon_arrow.classList = 'fas fa-chevron-down'
-            } 
-        });
-    </script> 
-
-    <script>
-        const _container = document.querySelector(".container");
-        _container.addEventListener("click", function () {
-            if (_dd_menu_links.style.display == "flex"){
-                _dd_menu_links.style.display = "none";
-            } 
-            if (_dd_menu.style.display == "flex"){
-                _dd_menu.style.display = "none";
-                _icon_arrow.classList = 'fas fa-chevron-down'
-            } 
-        });
-    </script>
-
+    {{!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
     <script src="/scripts/customScripts.js"></script>
-    <script src="/scripts/sweetAlert.js"></script>
+    {{!-- <script src="/scripts/sweetAlert.js"></script> --}}
     <script src="/scripts/signupScript.js"></script>
 </body>
 </html>

@@ -135,6 +135,7 @@ html {
     box-shadow: -3px -3px 7px #ffffff, 5px 5px 10px #ceced1;
     border-radius: 15px;
     display: none;
+    z-index: 10;
     
 }
 
@@ -155,6 +156,7 @@ html {
     box-shadow: -3px -3px 7px #ffffff, 5px 5px 10px #ceced1;
     border-radius: 15px;
     display: none;
+    z-index: 10;
 }
 
 .dd_menu::before {
@@ -618,14 +620,17 @@ input:-webkit-autofill:active  {
 .container-link {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    position: relative;
+    background: transparent;
+    border-radius: 20px;
+    /* justify-content: space-between;
     height: 70px;
     width: 70px;
     padding: 30px 15px 15px 15px;
     border-radius: 20px;
     background-color: #ecf0f3;
     box-shadow: 13px 13px 20px #cbced1,
-    -13px -13px 20px #fff;
+    -13px -13px 20px #fff; */
 }
 
 .container-link-hidden{
@@ -635,19 +640,22 @@ input:-webkit-autofill:active  {
     align-items: center;
     height: 120px;
     width: 120px;
-    /* border: 2px solid black; */
     text-decoration: none;
     color: rgb(4, 12, 78);
+    /* border: 2px solid black; */
+    
     position:relative;
+    /* z-index: 1; */
 }
 
 .container-link-hidden img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
     border-radius: 20px;
     padding: 10px;
     background-color: #ecf0f3;
+    
 }
 
 .container-link-hidden:hover{
@@ -662,12 +670,37 @@ input:-webkit-autofill:active  {
     top:0;
     right: 0;
     padding: 10px;
-    /* visibility: hidden; */
+    display:none;
+    z-index: 10;
+  
+}
+
+.more-actions-menu{
+    position: absolute;
+    top: 150px;
+    left:150px;
+    display: none;
+    z-index: 10;
+    list-style: none;
+    /* width: 90px; */
+    /* display:flex; */
+    border-radius: 5px;
+    /* border: 2px solid black; */
+    height: 100px;
+    width: 120px;
+    color: #31344b;
+    line-height: 30px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 550;
+    background: gray;
+    
+
 }
 
 .icon-more-vertical:hover {
-    visibility:visible;
-
+    display:block;
+    cursor:pointer;
 }
 
 

@@ -1,4 +1,4 @@
-{{!-- <script src="https://unpkg.com/vue-swal"></script> --}}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/scripts/sweetAlert.js"></script>
 {{#if username.username}}
     
@@ -31,9 +31,6 @@
                     <a onclick = "alertSwalForgotUsername()" href="#">
                         Forgot Username?
                     </a>
-                    {{!-- <a href="/forgot_user" id = 'link-forgot-username'>
-                        Forgot Username?
-                    </a> --}}
                     <a onclick = "alertSwalForgotPassword()" href="#">
                         Forgot Password?
                     </a>
@@ -124,11 +121,4 @@
         </div>
     {{/if}}
 {{/if}}
-
-
-
-
-
-
-
-{{!-- <script src="/scripts/sweetAlertForgot.js"></script> --}}
+{{!-- <script src="/scripts/sweetAlert.js"></script> --}}
