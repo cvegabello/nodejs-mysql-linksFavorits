@@ -1,5 +1,5 @@
 const current_location = location.pathname;
-const _nav_menu = document.getElementById("nav_menu");
+const _nav_menu_init = document.getElementById("nav_menu-init");
 const imgDiv = document.querySelector(".profile-pic-div");
 const img = document.getElementById("photo");
 const file = document.querySelector("#pic_file");
@@ -10,34 +10,38 @@ const _IdTxtPhotoHide = document.getElementById("IdTxtPhotoHide");
 // _more_actions_menu.style.display ="none";
 
 if (current_location == "/") {
-  _nav_menu.style.visibility = "hidden";
+  _nav_menu_init.style.visibility = "hidden";
+}
+
+if (current_location == "/signup") {
+  file.addEventListener("change", function () {
+    const choosedFile = this.files[0];
+    if (choosedFile) {
+      const reader = new FileReader();
+      reader.addEventListener("load", function () {
+        img.setAttribute("src", reader.result);
+        _IdTxtPhotoHide.setAttribute("value", file.files[0].name);
+      });
+      reader.readAsDataURL(choosedFile);
+      _changePhotoBtn.style.display = "none";
+  
+      imgDiv.addEventListener("mouseenter", function () {
+        _changePhotoBtn.style.display = "block";
+      });
+      
+      imgDiv.addEventListener("mouseleave", function () {
+        _changePhotoBtn.style.display = "none";
+      });
+    }
+  });
 }
 
 
-file.addEventListener("change", function () {
-  const choosedFile = this.files[0];
-  if (choosedFile) {
-    const reader = new FileReader();
-    reader.addEventListener("load", function () {
-      img.setAttribute("src", reader.result);
-      _IdTxtPhotoHide.setAttribute("value", file.files[0].name);
-    });
-    reader.readAsDataURL(choosedFile);
-    _changePhotoBtn.style.display = "none";
 
-    imgDiv.addEventListener("mouseenter", function () {
-      _changePhotoBtn.style.display = "block";
-    });
-    
-    imgDiv.addEventListener("mouseleave", function () {
-      _changePhotoBtn.style.display = "none";
-    });
-  }
-});
 
-_changePhotoBtn.addEventListener("click", function () {
-  _changePhotoBtn.style.display = "none";
-});
+// _changePhotoBtn.addEventListener("click", function () {
+//   _changePhotoBtn.style.display = "none";
+// });
 
 
 

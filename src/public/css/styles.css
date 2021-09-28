@@ -26,7 +26,9 @@ html {
     /* width: 100%; */
     padding: 12px 0;
     background: #ecf0f3;
-    box-shadow: -3px -3px 7px #ffffff, 5px 5px 10px #ceced1;
+    box-shadow: -3px -3px 7px #ffffff, 5px 5px 10px #979799;
+    margin-bottom: 20px;
+    border-radius: 15px;
 }
 
 .menu_container {
@@ -39,24 +41,38 @@ html {
 
 .nav_brand {
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     align-items: center;
 
 }
 
 .nav-brand-logo {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background: transparent;
     border-radius: 50%;
-    margin: 0 20px 0 0;
+    margin: 0 0px 0 10px;
 }
 
 .nav_brand a {
-    font-size: 2.0rem;
+    letter-spacing: 3.5px;
+    font-size: 2.2rem;
     font-weight: 600;
     text-decoration: none;
-    color: #31344b;
+    /* color: #31344b; */
+    /* font-family: 'Grechen Fuemen', cursive; */
+    font-family: 'Gluten', cursive;
+    /* font-family: 'Luckiest Guy', cursive; */
+    color:#e44e09;
+    padding: 10px 10px 5px 15px;
+
+}
+
+
+.nav_brand a:hover {
+    letter-spacing: 3.5px;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
 /* ================= RIGHT SITE MENU ============================== */
@@ -88,7 +104,34 @@ html {
     /* background: yellowgreen; */
 }
 
+.nav-menu-init{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-right: 20px;
+    height: 40px;
+    width: 200px;
+    color: #31344b;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.8rem;
+    transition: .2s;
+    font-weight: 550;
+}
 
+.nav-menu-init a {
+    text-decoration: none;
+    color: #31344b;
+    font-weight: 550;
+    padding: 5px 15px 5px 15px;
+}
+
+.nav-menu-init a:hover{
+    padding: 5px 15px 5px 15px;
+    border-radius: 30px;
+    box-shadow: inset 5px 5px 10px #ff704d, inset -5px -5px 10px #b32400;
+
+}
 
 .nav-menu a {
     text-decoration: none;
@@ -127,10 +170,11 @@ html {
 
 .dd_menu_links{
     position: absolute;
-    top: 70px;
-    right: 370px;
-    width: 190px;
+    top: 80px;
+    right: 380px;
+    width: 180px;
     display:flex;
+    /* justify-content:space-between; */
     box-shadow: -3px -3px 7px #ffffff, 5px 5px 10px #ceced1;
     border-radius: 15px;
     display: none;
@@ -149,8 +193,8 @@ html {
 
 .dd_menu {
     position: absolute;
-    top: 70px;
-    right: 80px;
+    top: 80px;
+    right: 120px;
     display:flex;
     box-shadow: -3px -3px 7px #ffffff, 5px 5px 10px #ceced1;
     border-radius: 15px;
@@ -187,15 +231,20 @@ html {
 
 .dd_right{
     padding: 8px 15px;
+    background: #fff;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 130px;
 }
 
 .dd_right a{
     text-decoration: none;
     color: #868686;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     border-radius: 10px;
     /* box-shadow: inset 5px 5px 10px #858282, inset -5px -5px 10px #ceced1; */
     padding: 8px 15px;
+    
 }
 
 
@@ -216,28 +265,6 @@ html {
     box-shadow: inset 5px 5px 10px #858282, inset -5px -5px 10px #ceced1;
 }
 
-/* h5{
-    padding-left: 8px;
-    padding-right: 8px;
-} */
-
-/* ================DROPDOWN MENU ================================ */
-
-
-
-/* .nav-main ul ul{
-    position: absolute;
-    top: 55px;
-    border-radius: 30px;
-    box-shadow: inset 5px 5px 10px #ffffff, inset -5px -5px 10px #ceced1;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: .2s ease-out;
-}*/
-
-/* .nav-links_dropdown li:hover{
-    transform: scaleY(1);    
-}  */
 
 /* ====================================== ADD NEW LINK FORM ================================================= */
 
@@ -254,13 +281,13 @@ html {
     margin-bottom: 40px;
     padding-top: 20px;
     padding-bottom: 20px; */
-    position: absolute;
+    /* position: absolute; */
     z-index: -1;
 }
 
 .container-form__link{
-    position: relative;
-    top: -80px;
+    /* position: relative;
+    top: -80px; */
     width: 430px;
     height: 400px;
     padding: 30px 35px 35px 35px;
@@ -268,11 +295,13 @@ html {
     background-color: #ecf0f3;
     box-shadow: 13px 13px 20px #707172,
     -8px -8px 10px rgb(161, 158, 158);
+    margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 .container-form__signup {
-    position: relative;
-    top: -50px;
+    /* position: absolute;
+    top: 70px; */
     width: 430px;
     height: 590px;
     padding: 30px 35px 35px 35px;
@@ -280,11 +309,13 @@ html {
     background-color: #ecf0f3;
     box-shadow: 13px 13px 20px #707172,
     -8px -8px 10px rgb(161, 158, 158);
+    margin-top: 80px;
+    margin-bottom: 50px;
 }
 
 .container-form__signin{
-    position: relative;
-    top: -50px;
+    /* position: relative;
+    top: -50px; */
     width: 430px;
     height: 400px;
     padding: 30px 35px 35px 35px;
@@ -292,6 +323,8 @@ html {
     background-color: #ecf0f3;
     box-shadow: 13px 13px 20px #707172,
     -8px -8px 10px rgb(161, 158, 158);
+    margin-top: 110px;
+    margin-bottom: 30px;
 }
 
 
@@ -362,17 +395,6 @@ html {
     text-transform: uppercase;
 
 }
-
-/* .group-input__fullname {
-    margin-top: 0px;
-    border-radius: 25px;
-    box-shadow: inset 8px 8px 8px #cbced1, inset -5px -5px 4px rgb(163, 160, 160);
-    display:flex;
-    align-items: center;
-    justify-content:center;
-
-} */
-
 
 .group-input,
 .group-textarea {
@@ -604,15 +626,28 @@ input:-webkit-autofill:active  {
 
 /*======================= VIEW, DELETE AND EDIT LINKS FORM =============================================================== */
 
-.container-list {
+/* .container-groups-links{
     overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 3.0rem;
-    background-color: #ecf0f3;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.0rem;
+    background-color:  #ecf0f3;
     padding:40px;
     justify-items: center;
     margin-top: 15px;
+    
+} */
+
+.container-list {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2.0rem;
+    /* background-color: #b2d3ec; */
+    padding:40px;
+    justify-items: center;
+    margin-top: 15px;
+    /* border: 2px solid black; */
 }
 
 .container-link {
@@ -621,14 +656,7 @@ input:-webkit-autofill:active  {
     position: relative;
     background: transparent;
     border-radius: 20px;
-    /* justify-content: space-between;
-    height: 70px;
-    width: 70px;
-    padding: 30px 15px 15px 15px;
-    border-radius: 20px;
-    background-color: #ecf0f3;
-    box-shadow: 13px 13px 20px #cbced1,
-    -13px -13px 20px #fff; */
+   
 }
 
 .container-link-hidden{
@@ -667,9 +695,10 @@ input:-webkit-autofill:active  {
     position: absolute;
     top:0;
     right: 0;
-    padding: 10px;
+    padding: 18px;
     display:none;
     z-index: 10;
+    /* border: 2px solid black;  */
   
 }
 
@@ -704,32 +733,11 @@ input:-webkit-autofill:active  {
 }
 
 
-/* .nav-links_dropdown{
-    padding:0px 30px 0px 30px;
-    cursor: pointer; 
-    border-radius: 10px;
-    box-shadow: inset 5px 5px 10px #858282, inset -5px -5px 10px #ceced1;
-
-}
-
-.nav-links_dropdown:hover{
-    box-shadow: inset 5px 5px 10px #ff704d, inset -5px -5px 10px #b32400;
-
-} */
-
-
-
-
-
-
 
 .icon-more-vertical:hover {
     display:block;
     cursor:pointer;
 }
-
-
-
 
 
 .container-title-a:hover {
@@ -775,10 +783,12 @@ input:-webkit-autofill:active  {
 }
 
 .container-timeAgo {
-    box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1;
-    border-radius: 10px;
+    /* box-shadow: -3px -3px 7px #ffffff, 3px 3px 5px #ceced1; */
+    /* border-radius: 10px; */
     text-align: center;
     font-size: 1.2rem;
+    /* background: orange; */
+    text-transform: uppercase
 }
 
 .container-timeAgo h3 {
@@ -1115,9 +1125,13 @@ img {
 
 .home-app-name {
     text-align: center;
-    font-size: 5.0rem;
-    letter-spacing: 2px;
+    font-size: 8.0rem;
+    letter-spacing: 6px;
     font-weight: 800;
+    color:#e44e09;
+    /* font-family: 'Grechen Fuemen', cursive; */
+    /* font-family: 'Luckiest Guy', cursive; */
+    font-family: 'Gluten', cursive;
 }
 
 .home-message {
@@ -1127,6 +1141,7 @@ img {
     padding-bottom: 30px;
     letter-spacing: 1px;
     font-weight: 600;
+    /* font-family: 'Grechen Fuemen', cursive; */
 }
 
 .button-neon-a a {
@@ -1216,5 +1231,268 @@ a:hover span:nth-child(4){
     background-color: #707781;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23231c27' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
+
+
+.faviconLink{
+    width: 35px;
+    height: 35px;
+    
+
+}
+
+.containerSwalInfoLink{
+    line-height: 50px;
+    /* background-image: url('/img/charlie-brown.svg'); */
+    height: 80;
+    width: 90;
+    background-color: #DFDBE5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    color: rgb(7, 7, 6);
+    border-radius: 8%;
+}
+
+@media (max-width: 1400px) {
+
+    .container-list {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 2.0rem;
+        
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .container-list {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.0rem;
+       
+    }
+
+    .dd_menu_links{
+        
+        right: 350px;
+                
+    }
+
+    .container-form__signin{
+        /* position: relative;
+        top: 90px; */
+        width: 300px;
+        height: 360px;
+        padding: 15px;
+        margin-top: 110px;
+        margin-bottom: 30px;
+        
+    }
+
+    .container-form__signup{
+        /* position: relative; */
+        /* top: -20px; */
+        width: 300px;
+        height: 540px;
+        padding: 15px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+        
+    }
+
+    .container-form__link{
+        /* position: relative;
+        top: -80px; */
+        width: 300px;
+        height: 395px;
+        padding: 15px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+    }
+
+    .profile-pic-div {
+        position: absolute;
+        top: -50px;
+        left: 110px;
+        height: 80px;
+        width: 80px;
+        
+    
+    }
+
+
+
+}
+
+@media (max-width: 768px) {
+
+    .container-list {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.0rem;
+       
+    }
+
+    .nav-brand-logo {
+        width: 30px;
+        height: 30px;
+      
+    }
+    
+    .nav_brand a {
+        font-size: 1.8rem;
+        
+    }
+
+    .nav-menu{
+        width: 300px;
+        font-size: 1.6rem;
+        
+    }
+
+    .dd_menu_links{
+        
+        right: 260px;
+                
+    }
+
+    
+    .nav-links_dropdown{
+        padding:0px 15px 0px 15px;
+           
+    }
+
+    .li_main_group {
+        
+        width: 180px;
+               
+    }
+
+    .nav-menu img {
+        width: 20px;
+        height:20px;
+               
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .container-list {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.0rem;
+        
+    }
+
+    .nav_brand a {
+        font-size: 1.5rem;
+           
+    }
+
+    .nav-menu{
+        width: 230px;
+        font-size: 1.4rem;
+        
+    }
+
+    
+    .nav-links_dropdown{
+        padding:0px 10px 0px 10px;
+           
+    }
+
+    .li_main_group {
+        
+        width: 160px;
+               
+    }
+
+    .nav-menu img {
+        width: 20px;
+        height:20px;
+               
+    }
+
+    .dd_menu_links{
+        
+        right: 198px;
+        top: 70px;
+                
+    }
+
+    .dd_menu{
+        top: 70px;
+        right: 80px;
+    }
+
+    .container-form__signin{
+        /* position: relative; */
+        top: -20px;
+        width: 300px;
+        height: 360px;
+        padding: 15px;
+        margin-top: 110px;
+        margin-bottom: 30px;
+        
+    }
+
+    .profile-pic-div {
+        position: absolute;
+        top: -50px;
+        left: 110px;
+        height: 80px;
+        width: 80px;
+    }
+
+    .container-form__signup{
+        /* position: relative; */
+        top: -20px;
+        width: 300px;
+        height: 540px;
+        padding: 15px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+        
+    }
+
+    .container-form__link{
+        /* position: relative;
+        top: -80px; */
+        width: 300px;
+        height: 395px;
+        padding: 30px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+    }
+
+    /* .profile-pic-div {
+        position: absolute;
+        top: -50px;
+        left: 110px;
+        height: 80px;
+        width: 80px;
+    } */
+
+    .nav-brand-logo {
+        width: 35px;
+        height: 35px;
+        display:none;
+        /* margin-left: 5px; */
+    }
+
+    .nav-menu-init{
+        margin-right: 10px;
+        width: 180px;
+        justify-content:space-evenly;
+    }
+    
+    
+
+}
+
 
 

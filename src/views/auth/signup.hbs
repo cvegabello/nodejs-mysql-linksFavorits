@@ -1,6 +1,5 @@
-{{!-- <script src="../../public/scripts/signupScript.js"></script> --}}
 <div class="container">
-  <div class="container-form__signup">
+  <div class="container-form__signup animate__animated animate__backInDown">
     <div class="main-title">New account</div>
     <form action="/signup" method="POST" enctype="multipart/form-data" id="formSignUp">
       <div class="profile-pic-div">
@@ -73,9 +72,6 @@
         <p id="inputMessError__password2" class= "form__input-error">Passwords does not match.</p>
 
       </div>
-      {{!-- <div class="formulario__mensaje" id="signupId__mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please fill out this form correctly. </p>
-			</div>   --}}
       <button type="button" class="submitButton" id="saveButton" onclick = "validaSignUpSubmit(formSignUp)">
         SignUp
       </button>
@@ -85,4 +81,3 @@
     </form>
   </div>
 </div>
-{{!-- <script src="../../public/scripts/signupScript.js"></script> --}}

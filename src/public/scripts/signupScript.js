@@ -66,20 +66,19 @@ function validateFormSignup(e) {
 	if(_inputPassword1.value !== _inputPassword2.value){
         document.getElementById(`inputMessError__password2`).classList.add('form__input-error-activo');
         document.getElementById(`groupSignup__password2`).classList.add('form__group-incorrect');
-		document.getElementById(`groupSignup__password2`).classList.remove('form__group-correct');
+		    document.getElementById(`groupSignup__password2`).classList.remove('form__group-correct');
         document.getElementById(`icon-validate-state__password2`).style.visibility = 'visible'
-		document.getElementById(`icon-validate-state__password2`).classList.add('fa-times-circle');
-		document.getElementById(`icon-validate-state__password2`).classList.remove('fa-check-circle');
-		
-		fields['password'] = false;
+		    document.getElementById(`icon-validate-state__password2`).classList.add('fa-times-circle');
+		    document.getElementById(`icon-validate-state__password2`).classList.remove('fa-check-circle');
+		    fields['password'] = false;
 	} else {
         document.getElementById(`inputMessError__password2`).classList.remove('form__input-error-activo');
-		document.getElementById(`groupSignup__password2`).classList.remove('form__group-incorrect');
-		document.getElementById(`groupSignup__password2`).classList.add('form__group-correct');
+		    document.getElementById(`groupSignup__password2`).classList.remove('form__group-incorrect');
+		    document.getElementById(`groupSignup__password2`).classList.add('form__group-correct');
         document.getElementById(`icon-validate-state__password2`).style.visibility = 'visible'
-		document.getElementById(`icon-validate-state__password2`).classList.add('fa-check-circle');
-		document.getElementById(`icon-validate-state__password2`).classList.remove('fa-times-circle');
-		fields['password'] = true;
+		    document.getElementById(`icon-validate-state__password2`).classList.add('fa-check-circle');
+		    document.getElementById(`icon-validate-state__password2`).classList.remove('fa-times-circle');
+		    fields['password'] = true;
 	}
   }
 

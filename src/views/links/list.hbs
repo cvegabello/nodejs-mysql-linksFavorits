@@ -1,11 +1,11 @@
 {{#if links}}
+    
     <div class="container-list">
     {{#each links}}
-        
         <ul class="more-actions-menu">
-            <li><a href="#">Edit shortcut</a></li>
-            <li><a href="#">Remove</a></li>
-            <li><a href="#">Info Link</a></li>
+            <li><a href="/links/edit/{{id}}">Edit shortcut</a></li>
+            <li><a onclick ="alertSwalDeleteLink({{id}})" id = "link-delete-link" href="#">Remove</a></li>
+            <li><a onclick ="alertSwalInfoLink({{id}}, `{{title}}`, `{{url}}`, `{{description}}`, `{{timeago created_at}}`)" href="#">Info Link</a></li>
         </ul>
         
         <div class="container-link">
@@ -20,31 +20,33 @@
 
     <script>
         const _container_list = document.querySelector(".container-list");
-        const _more_actions_menu = document.querySelector(".more-actions-menu");
+        const _more_actions_menuList = document.querySelectorAll(".more-actions-menu");
         const _moreActionBtnList = document.querySelectorAll(".icon-more-vertical");
         const _containerLinkList = document.querySelectorAll(".container-link");
         
-        _more_actions_menu.style.display ="none";
-        _more_actions_menu.addEventListener("mouseleave", function () {
-            {{!-- alert("hola"); --}}
-            if (_more_actions_menu.style.display == "block") {
-            _more_actions_menu.style.display ="none";
-            }
-        });
-
         for (let i = 0; i < _containerLinkList.length; i++)
         {
+
+            _more_actions_menuList[i].style.display ="none";
+
+            _more_actions_menuList[i].addEventListener("mouseleave", function () {
+                if (_more_actions_menuList[i].style.display == "block") {
+                    _more_actions_menuList[i].style.display ="none";
+                }
+            });
+
+
             _moreActionBtnList[i].addEventListener("click", function () {
                 let coords = _moreActionBtnList[i].getBoundingClientRect();
                 // alert(coords.left)
-                if (_more_actions_menu.style.display == "none") {
-                _more_actions_menu.style.display ="block";
-                _more_actions_menu.style.top=coords.top + 5 + "px";
-                _more_actions_menu.style.left=coords.left - 120 + "px";
-                _more_actions_menu.focus();
+                if (_more_actions_menuList[i].style.display == "none") {
+                _more_actions_menuList[i].style.display ="block";
+                _more_actions_menuList[i].style.top=coords.top + 5 + "px";
+                _more_actions_menuList[i].style.left=coords.left - 120 + "px";
+                _more_actions_menuList[i].focus();
 
                 } else {
-                _more_actions_menu.style.display ="none";
+                _more_actions_menuList[i].style.display ="none";
                 }
             })
             _containerLinkList[i].addEventListener("mouseover", function () {
@@ -56,42 +58,6 @@
             });
         }
     </script> 
-    
-
-
-
-                    
-            
-            {{!-- <div class="container-link"> --}}
-                
-
-
-
-                
-                {{!-- <div class="description-link">
-                    <textarea readonly rows="3" >{{description}}</textarea>
-                </div>
-
-                <div class="container-timeAgo">
-                    <h3>{{timeago created_at}}</h3>
-                </div>
-
-                <div class="container-buttons">
-                    <div class="container-buttonDelete">
-                        <a onclick ="alertSwalDeleteLink({{id}})" id = "link-delete-link" href="#" >
-                            Delete
-                        </a>
-                    </div>
-                    <div class="container-buttonEdit">
-                        <a href="/links/edit/{{id}}">
-                            Edit
-                        </a>
-                    </div>
-                </div> --}}
-            {{!-- </div> --}}
-            {{!-- <p>{{title}}</p> --}}
-        {{!-- </div> --}}
-        
 {{else}}
 
     <div class="container-list"></div>

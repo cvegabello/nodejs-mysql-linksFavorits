@@ -16,4 +16,18 @@
         </div>
     </div>
 {{/if}}
-{{!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../scripts/sweetMessage.js"></script>
+
+{{#if username.username}}
+    <script type="text/javascript"> 
+        alertSwalUsername(`{{username.username}}`); 
+    </script> 
+{{else}}
+    {{#if messageSwal}}
+        <script type="text/javascript">  
+            alertSwalMessage(`{{messageSwal}}`, false); 
+        </script>
+    {{/if}} 
+{{/if}}

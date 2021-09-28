@@ -174,7 +174,7 @@ window.validaEmailSubmit = function (formEmail){
 			document.getElementById('forgotUsernameId__mensaje').classList.remove('formulario__mensaje-activo');
 		}, 5000);
 	}
-}
+};
 
 window.validaSubmit = function (formResetPwd){
 
@@ -186,7 +186,40 @@ window.validaSubmit = function (formResetPwd){
 			document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
 		}, 5000);
 	}
-}
+};
+
+function alertSwalInfoLink(id, title, url, description, timeago) {
+    const infoLink = document.createElement("div");
+    infoLink.classList.add('containerSwalInfoLink');
+    infoLink.innerHTML = `
+        
+        <img class="faviconLink" src=https://www.google.com/s2/favicons?domain_url=${url} alt="">
+
+    
+        <h1>${title}</h1>
+        <h3>${url}</h3>
+        <div class="description-link">
+            <p>${description}</p>
+        </div>
+
+        <div class="container-timeAgo">
+            <h3>CREATED: ${timeago}</h3>
+        </div>`
+
+
+    Swal.fire({
+        // title: `${title}`,
+        html: infoLink,
+        // icon: 'info',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK',
+        allowOutsideClick:false,
+        showCloseButton:true,
+        background:'#DFDBE5'
+        
+    })
+};
+
 
 function alertSwalDeleteLink(id) {
     Swal.fire({
@@ -203,74 +236,13 @@ function alertSwalDeleteLink(id) {
         
         if (result.isConfirmed) {
             window.location = `/links/delete/${id}`;
-            // _link_delete_link.href=`/links/delete/${id}`;
-            // _link_delete_link.click();
-
-            // Swal.fire({
-            //     title: 'Deleted!',
-            //     text: 'Your link has been deleted.',
-            //     icon: 'success',
-            //     allowOutsideClick:false,
-            // })
+            
         }
     })
 }
 
-function alertSwalUsername(username){
-    Swal.fire({
-        title: `Your username is: ${username}`,
-        icon: 'success',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'OK',
-        showClass: {
-            popup: 'animate__animated animate__backInDown'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__backOutDown'
-          },
-        allowOutsideClick:false,
-    }); 
-    // .then(function() {
-    //     window.location = "/signin";
-    // });
 
-}
 
-function alertSwalMessage(message, isSuccess){
-    if (isSuccess){
-        Swal.fire({
-            title: message,
-            icon: 'success',
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'OK',
-            showClass: {
-                popup: 'animate__animated animate__backInDown'
-              },
-              hideClass: {
-                popup: 'animate__animated animate__backOutDown'
-              },
-            allowOutsideClick:false,
-        });
-        // .then(function() {
-        //     window.location = "/signin";
-        // });
-    }else{
-        Swal.fire({
-            title: message,
-            icon: 'error',
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'OK',
-            showClass: {
-                popup: 'animate__animated animate__backInDown'
-              },
-              hideClass: {
-                popup: 'animate__animated animate__backOutDown'
-              },
-            allowOutsideClick:false,
-        });
-        // .then(function() {
-        //     window.location = "/signin";
-        // });
-    }
-}
+
+
 

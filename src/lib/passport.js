@@ -17,7 +17,14 @@ passport.use('local.signin', new LocalStrategy({
     const user = rows[0];
     const validPassword = await helpers.matchPassword(password,user.password);
     if (validPassword) {
-      done(null, user, req.flash('success', 'Welcome ' + user.username));
+      done(null, user, req.flash('success', 'Welcome ' + user.fullname));
+
+      // setTimeout(() => {
+      //   document.getElementById('forgotUsernameId__mensaje').classList.remove('formulario__mensaje-activo');
+      // }, 5000);
+
+
+
       
     }
     else {

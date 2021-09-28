@@ -74,9 +74,9 @@ router.get("/logout", (req, res) => {
   res.redirect("/signin");
 });
 
-router.get("/forgot_user-email", isNotLoggedIn, async (req, res) => {
-  res.render("forgot_user");
-});
+// router.get("/forgot_user-email", isNotLoggedIn, async (req, res) => {
+//   res.render("forgot_user");
+// });
 
 router.post("/forgot_user-email", async (req, res) => {
   // console.log(req.body);
@@ -86,11 +86,11 @@ router.post("/forgot_user-email", async (req, res) => {
   ]);
   num_rows = row.length;
   if (num_rows > 0) {
-      res.render("auth/signin", { username: row[0] });
+      res.render("partials/message", { username: row[0] });
   } else {
-      res.render("auth/signin", { messageSwal: 'Email is not registered in the Database' });
+      res.render("partials/message", { messageSwal: 'Email is not registered in the Database' });
       // req.flash("message", "Email is not registered in the Database");
-      // res.redirect("/forgot_user-email");
+      // res.redirect("/signin");
   }
 });
 
