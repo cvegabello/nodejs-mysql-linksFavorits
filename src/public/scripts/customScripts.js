@@ -13,7 +13,7 @@ if (current_location == "/") {
   _nav_menu_init.style.visibility = "hidden";
 }
 
-if (current_location == "/signup") {
+if ((current_location == "/signup") || (current_location == "/editProfile")) {
   file.addEventListener("change", function () {
     const choosedFile = this.files[0];
     if (choosedFile) {

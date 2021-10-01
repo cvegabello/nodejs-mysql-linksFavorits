@@ -109,8 +109,18 @@ router.post("/reset_pass", async (req, res) => {
     res.redirect("/signin");
   }
 });
-  
 
+router.get('/editProfile', isLoggedIn, async (req, res) => {
+  res.render("auth/editProfile");
+});
 
+router.post("/editProfile/:id", uploadPhoto, async (req, res) => {
+  profile_image = req.file.filename;
+    const { id } = req.params;
+    let { fullname, email } = req.body;
+    await pool.query('UPDATE users SET fullname = ?, profile_image = ?, email = ? WHERE id = ?', [fullname, profile_image, email, id]);
+    req.flash('success', fullname + ' account was edited successfully');
+    res.redirect('/links');
+  });
 
 module.exports = router;

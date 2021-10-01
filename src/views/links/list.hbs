@@ -3,7 +3,7 @@
     <div class="container-list">
     {{#each links}}
         <ul class="more-actions-menu">
-            <li><a href="/links/edit/{{id}}">Edit shortcut</a></li>
+            <li><a href="/links/edit/{{id}}">Edit link</a></li>
             <li><a onclick ="alertSwalDeleteLink({{id}})" id = "link-delete-link" href="#">Remove</a></li>
             <li><a onclick ="alertSwalInfoLink({{id}}, `{{title}}`, `{{url}}`, `{{description}}`, `{{timeago created_at}}`)" href="#">Info Link</a></li>
         </ul>

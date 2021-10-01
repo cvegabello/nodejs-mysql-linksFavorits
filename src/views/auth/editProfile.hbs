@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="container-form__editProfile animate__animated animate__backInDown">
+    <div class="main-title">Edit user account</div>
+    <form action="/editProfile/{{user.id}}" method="POST" enctype="multipart/form-data" id="formEditProfile">
+      <div class="profile-pic-div">
+        <img src= "/uploads/{{user.profile_image}}" id="photo" />
+        <input type="file" id="pic_file" name="txtPhoto" value="{{user.profile_image}}"/>
+        <label for="pic_file" id="changePhotoBtn">Change Photo</label>
+      </div>
+      <input type="text" name="txtPhotoHide" id="IdTxtPhotoHide" value="{{user.profile_image}}"/>
+
+      <div class="fields">
+        <div class="group-input" id="groupSignup__fullname">
+          <i class="fas fa-user-plus"></i>
+          <input
+            type="text"
+            name="fullname"
+            value={{user.fullname}}
+            required
+            minlength="2"
+            maxlength="20"
+            placeholder="First Name"
+            autocomplete="on"
+            onkeyup = "validateFormEditProfile(event)"
+            autofocus
+          />
+          <i id = "icon-validate-state__fullname" class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p id="inputMessError__fullname" class= "form__input-error">First name can only use letters without spaces. Size between 2-20.</p>  
+        <div class="group-input" id="groupSignup__email">
+          <i class="fas fa-at"></i>
+          <input type="email" name="email" value={{user.email}} placeholder="Email" onkeyup = "validateFormEditProfile(event)" required />
+          <i id = "icon-validate-state__email" class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+        <p id="inputMessError__email" class= "form__input-error">Email must be entered correctly.</p>
+      </div>
+      <button type="button" class="submitButton" onclick = "validateEditProfileSubmit(formEditProfile)">
+        Save
+      </button>
+      <div class="formulario__mensaje" id="signupId__mensaje">
+        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please fill out this form correctly. </p>
+      </div>  
+    </form>
+  </div>
+</div>

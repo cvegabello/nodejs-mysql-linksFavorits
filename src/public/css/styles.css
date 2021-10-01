@@ -289,7 +289,8 @@ html {
     /* position: relative;
     top: -80px; */
     width: 430px;
-    height: 400px;
+    height: auto;
+    /* height: 400px; */
     padding: 30px 35px 35px 35px;
     border-radius: 40px;
     background-color: #ecf0f3;
@@ -300,10 +301,12 @@ html {
 }
 
 .container-form__signup {
-    /* position: absolute;
-    top: 70px; */
+    display: flex;
+    flex-direction: column;
     width: 430px;
-    height: 590px;
+    height: auto;
+
+    /* height: 590px; */
     padding: 30px 35px 35px 35px;
     border-radius: 40px;
     background-color: #ecf0f3;
@@ -312,6 +315,20 @@ html {
     margin-top: 80px;
     margin-bottom: 50px;
 }
+
+.container-form__editProfile {
+    width: 430px;
+    height: auto;
+    /* height: 350px; */
+    padding: 30px 35px 35px 35px;
+    border-radius: 40px;
+    background-color: #ecf0f3;
+    box-shadow: 13px 13px 20px #707172,
+    -8px -8px 10px rgb(161, 158, 158);
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
 
 .container-form__signin{
     /* position: relative;
@@ -328,14 +345,6 @@ html {
 }
 
 
-.logo {
-    background: url("/img/igtLogo1.png") no-repeat center center/cover;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 0 auto;
-    box-shadow: 0px 0px 2px #5f5f5f, 0px 0px 0px 5px #ecf0f3, 8px 8px 15px #a7aaaf, -8px -8px 15px #fff;
-}
 
 .main-title__link {
     text-align: center;
@@ -1293,7 +1302,20 @@ a:hover span:nth-child(4){
         /* position: relative; */
         /* top: -20px; */
         width: 300px;
-        height: 540px;
+        height: auto;
+        /* height: 540px; */
+        padding: 15px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+        
+    }
+
+    .container-form__editProfile{
+        /* position: relative; */
+        /* top: -20px; */
+        width: 300px;
+        height: auto;
+        /* height: 340px; */
         padding: 15px;
         margin-top: 70px;
         margin-bottom: 30px;
@@ -1304,7 +1326,8 @@ a:hover span:nth-child(4){
         /* position: relative;
         top: -80px; */
         width: 300px;
-        height: 395px;
+        height: auto;
+        /* height: 395px; */
         padding: 15px;
         margin-top: 70px;
         margin-bottom: 30px;
@@ -1452,7 +1475,20 @@ a:hover span:nth-child(4){
         /* position: relative; */
         top: -20px;
         width: 300px;
-        height: 540px;
+        height: auto;
+        /* height: 540px; */
+        padding: 15px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+        
+    }
+
+    .container-form__editProfile{
+        /* position: relative; */
+        top: -20px;
+        width: 300px;
+        height: auto;
+        /* height: 340px; */
         padding: 15px;
         margin-top: 70px;
         margin-bottom: 30px;
@@ -1463,20 +1499,14 @@ a:hover span:nth-child(4){
         /* position: relative;
         top: -80px; */
         width: 300px;
-        height: 395px;
+        height: auto;
+        /* height: 395px; */
         padding: 30px;
         margin-top: 70px;
         margin-bottom: 30px;
     }
 
-    /* .profile-pic-div {
-        position: absolute;
-        top: -50px;
-        left: 110px;
-        height: 80px;
-        width: 80px;
-    } */
-
+    
     .nav-brand-logo {
         width: 35px;
         height: 35px;

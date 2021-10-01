@@ -7,10 +7,15 @@ const expresions = {
 }
 
 const fields = {
-    fullname:false,
+  fullname:false,
 	username: false,
 	password: false,
-    email: false
+  email: false
+}
+
+const fieldsEditProfile = {
+  fullname:true,
+	email: true
 }
 
 function validateFormSignup(e) {
@@ -35,6 +40,43 @@ function validateFormSignup(e) {
           break;
       }
   }
+
+  function validateFormEditProfile(e) {
+    switch (e.target.name) {
+      case "fullname":
+        validarFieldEditProfile(expresions.nombre, e.target, 'fullname');
+      break;
+          
+      case "email":
+        validarFieldEditProfile(expresions.email, e.target, 'email');
+      break;
+    }
+  }
+
+  function validarFieldEditProfile(expresion, input, campo) {
+    const _fullName = document.getElementById(`groupSignup__${campo}`);
+    if(expresion.test(input.value)){
+        _fullName.classList.remove('form__group-incorrect');
+        _fullName.classList.add('form__group-correct');
+        document.getElementById(`inputMessError__${campo}`).classList.remove('form__input-error-activo');
+        document.getElementById(`icon-validate-state__${campo}`).style.visibility = 'visible'
+        document.getElementById(`icon-validate-state__${campo}`).classList.add('fa-check-circle');
+        document.getElementById(`icon-validate-state__${campo}`).classList.remove('fa-times-circle');
+        fieldsEditProfile[campo] = true;
+    } else {
+        _fullName.classList.add('form__group-incorrect');
+        _fullName.classList.remove('form__group-correct');
+        document.getElementById(`inputMessError__${campo}`).classList.add('form__input-error-activo');
+        document.getElementById(`icon-validate-state__${campo}`).style.visibility = 'visible'
+        document.getElementById(`icon-validate-state__${campo}`).classList.add('fa-times-circle');
+        document.getElementById(`icon-validate-state__${campo}`).classList.remove('fa-check-circle');
+        
+        fieldsEditProfile[campo] = false;
+    }
+
+}
+
+
   
   function validarField(expresion, input, campo) {
       const _fullName = document.getElementById(`groupSignup__${campo}`);
@@ -83,14 +125,28 @@ function validateFormSignup(e) {
   }
 
   function validaSignUpSubmit (formSignUp){
-    //   alert(fields.fullname + "|" + fields.username + "|" +  fields.password + "|" +  fields.email );
-
     if(fields.fullname && fields.username && fields.password && fields.email){
-		formSignUp.submit();
-	} else {
-		document.getElementById('signupId__mensaje').classList.add('formulario__mensaje-activo');
-        setTimeout(() => {
-			document.getElementById('signupId__mensaje').classList.remove('formulario__mensaje-activo');
-		}, 5000);
-	}
-}
+      formSignUp.submit();
+    } else {
+      document.getElementById('signupId__mensaje').classList.add('formulario__mensaje-activo');
+          setTimeout(() => {
+        document.getElementById('signupId__mensaje').classList.remove('formulario__mensaje-activo');
+      }, 5000);
+    }
+  }
+
+  function validateEditProfileSubmit(formEditProfile){
+    if(fieldsEditProfile.fullname && fieldsEditProfile.email){
+      formEditProfile.submit();
+    } else {
+      document.getElementById('signupId__mensaje').classList.add('formulario__mensaje-activo');
+          setTimeout(() => {
+        document.getElementById('signupId__mensaje').classList.remove('formulario__mensaje-activo');
+      }, 5000);
+    }
+
+  }
+  
+
+
+
