@@ -10,12 +10,6 @@ const passport = require('passport');
 const multer = require('multer');
 
 
-// const storage = multer.diskStorage({
-//   destination: path.join(__dirname, 'public/uploads'),
-//   filename: (req,file,cb) => {
-//     cb(null, file.originalname);
-//   }
-// })
 
 // Initializations
 
@@ -35,23 +29,6 @@ app.engine('.hbs', exphbs({
 }))
 app.set('view engine', '.hbs');
 
-// Middlewares
-
-// app.use(multer({
-//   storage,
-//   dest: path.join(__dirname, 'public/uploads'),
-//   limits: {fileSize: 1000000},
-//   fileFilter: (req, file, cb) => {
-//       const filetypes = /jpeg|jpg|png|gif/;
-//       const mimetype = filetypes.test(file.mimetype);
-//       const extname = filetypes.test(path.extname(file.originalname));
-//       if (mimetype && extname){
-//           return cb(null, true);
-//       }
-//       cb("Error: File type is not valid. Try to upload jpeg, jpg, png, gif");
-//   }
-//   }).single('image_profile'));
-
 
 app.use(session({
   secret: 'vegamysqlnodemysql',
@@ -65,9 +42,6 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(Swal());
-
-
 
 
 // Global Variables
