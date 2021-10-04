@@ -5,10 +5,10 @@ if (process.env.NODE_ENV === 'development'){
 module.exports = {
 
     database: {
-        host: 'localhost',
+        host: process.env.HOST_DB,
         user: process.env.USER_DB,
         password: process.env.PASSWORD_DB,
-        database: 'db_links'
+        database: process.env.DB_NAME
     }
 
 };
